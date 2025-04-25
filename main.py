@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.keys import Keys
 import time
 
 options = Options()
@@ -35,7 +36,8 @@ time.sleep(3)
 driver.find_element(By.ID, 'query').send_keys('오늘 날씨')
 time.sleep(2)
 
-driver.find_element(By.CSS_SELECTOR, '#search-btn').click()
+# driver.find_element(By.CSS_SELECTOR, '#search-btn').click()
+driver.find_element(By.ID, 'query').send_keys(Keys.ENTER)
 time.sleep(2)
 
 # 스크린 샷 찍기
